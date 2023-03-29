@@ -1,1 +1,31 @@
-<p>heroes works!</p>
+
+
+<div class="col" style="margin-top: 3% ;">
+    <div class="row">
+        <table class="table table-dark" style="width: 800px; margin-left: 35%;">
+            <thead>
+              <tr >
+                  <th scope="col" >Name</th>
+                <th scope="col">Aparicion</th>
+                <th scope="col">House</th>
+                <th scope="col">Alive</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let heroe of heroes">
+                    <td>{{heroe.nombre | uppercase}}</td>
+                    <td>{{heroe.aparicion}}</td>
+                    <td
+                    [ngStyle]="{'background-color': getBackgroundColor(heroe.casa)}">{{heroe.casa}}</td>
+                    <td [ngClass]="{
+                        success: heroe.vivo,
+                        error: !heroe.vivo
+                    }">{{heroe.vivo}}</td>
+        
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+

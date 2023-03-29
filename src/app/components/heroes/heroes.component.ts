@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroesService, Heroe } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-heroes',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor() { }
 
+
+  heroes:Heroe[] = [];
+  
+
+  constructor( private heroeServices:HeroesService) { }
+
+  getBackgroundColor(arg: string) : string{
+    switch (arg) {
+      case 'Marvel':
+        
+        return 'blue';
+      case 'DC':
+        
+      return 'grey';
+      
+      
+      default:
+        return '';
+    }
+  }
   ngOnInit(): void {
+    this.heroes = this.heroeServices.getHeroes();
   }
 
 }
