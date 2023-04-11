@@ -72,21 +72,21 @@ export class TablasComponent {
     console.log(usuario.nombre)
     const dialog = this.matDialog.open(AbmAlumnosComponent, {
       data: {
-        usuario:usuario
+        usuario: usuario
       }
     });
 
-    // dialog.afterClosed().subscribe((valor) => {
-    //   if (valor) {
-    //     this.dataSource.data = [
-    //       ...this.dataSource.data,
-    //       {
-    //         ...valor,
-    //         fecha_registro: new Date(),
-    //         id: this.dataSource.data.length + 1,
-    //       }
-    //     ];
-    //   }
-    // })
+    dialog.afterClosed().subscribe((valor) => {
+      if (valor) {
+        this.dataSource.data = [
+          ...this.dataSource.data,
+          {
+            ...valor,
+            fecha_registro: new Date(),
+            id: valor.id
+          }
+        ];
+      }
+    })
 }
 }
