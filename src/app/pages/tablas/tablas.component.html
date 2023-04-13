@@ -42,7 +42,7 @@
         <mat-icon>autorenew</mat-icon>
       
       </button>
-      <button style="background-color: red;margin-left: 2px;"  mat-flat-button><mat-icon >delete_forever</mat-icon></button>
+      <button (click)="deleteUser(usuario.id)" style="background-color: red;margin-left: 2px;"  mat-flat-button><mat-icon >delete_forever</mat-icon></button>
     </td>
 
   </ng-container>

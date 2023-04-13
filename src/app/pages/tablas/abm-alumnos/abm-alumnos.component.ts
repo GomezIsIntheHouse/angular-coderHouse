@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Estudiante } from '../tablas.component';
+import { AlumnosService } from 'src/app/services/alumnos.service';
 
 @Component({
   selector: 'app-abm-alumnos',
@@ -16,16 +17,13 @@ export class AbmAlumnosComponent implements OnInit{
 
   alumnosForm!: FormGroup;
 
-  // alumnosForm = new FormGroup({
-  //   nombre: this.nombreControl,
-  //   apellido: this.apellidoControl,
-  // });
+ 
 
   constructor(
     private dialogRef: MatDialogRef<AbmAlumnosComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
-    
+    private as:AlumnosService
     ) {}
 
   ngOnInit(): void {
@@ -36,6 +34,7 @@ export class AbmAlumnosComponent implements OnInit{
 
   CreateAlumnosForm(usuario?:Estudiante){
     {this.usuario? console.log(true) : console.log('no hay usuario')}
+
     this.alumnosForm = this.formBuilder.group({
       
       nombreControl: [usuario ? usuario.nombre : '', [Validators.required]],

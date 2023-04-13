@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "apellido": "Sosa",
+      "fecha_registro": "2020-06-17 15:56"
+    },
+    {
+      "id": 2,
+      "nombre": "Miriam",
+      "apellido": "Paez",
+      "fecha_registro": "2019-06-17 15:56:23"
+    },
+    {
+        "id": 3,
+        "nombre": "Carlos",
+        "apellido": "Pereyra",
+        "fecha_registro": "2018-08-11 16:25:33"
+    }
+]
